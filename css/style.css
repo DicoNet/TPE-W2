@@ -1,0 +1,366 @@
+/*-------------------------------------------------general-----------------------------------------------*/
+*
+ 
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    list-style:none;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+canvas {
+    border: 1px solid white;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+}
+.alert{
+    color: red;
+    font-size: 1.8rem;
+}
+body{
+    background: #141A26;
+}
+a:link{ 
+    text-decoration:none; 
+} 
+footer a:visited {
+    color: #ffffff;
+}
+.inexistente{
+    display: none;
+}
+.invisible{
+    visibility: hidden;
+}
+input,select{
+    background: #141A26;
+    border-color: #D99543;
+    outline: #F2B950;
+}
+.BtnA{
+    border: 1px solid #F2B950;
+}
+/*------------------------------------------------tabla-------------------------------------------*/
+table{
+    border-collapse: collapse;
+}
+th,td{
+    border: solid #005BBB;
+    padding: 6px;
+}
+thead{
+    background-color: #005BBB;
+    color: white;
+    border-bottom: #003fff 3px solid;
+}
+/*---------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------nav-----------------------------------------------*/
+.logo{
+    width: 40%;
+    height: 90%;
+}
+.aMostrar{
+  width: 100%;
+  height: 5vh;
+  position:fixed;
+  top:0;
+}
+.barraNav{
+    height: 100%;
+    background:  #D99543;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+.navPC{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.btnNav{  
+    color: #ffffff;
+    background-color:#D99543;
+    margin: 0 3px;
+}
+.btnNav:hover{
+    background: #F2B950;
+    /*border-radius: 15px;*/
+}
+.navMovil{
+    width: 25%;
+    height: auto;
+    position: absolute;
+    top: 7%; 
+    right: 70%;
+    background: #D99543;
+}
+.navMovil a{
+    color: #ffffff;
+}
+/*----------------------------------------footer---------------------------------------------------------*/
+footer{
+    background-color: #000000;
+    border-top: 3px solid  #141A26;
+    clear: both;
+    width: 100%;
+    height: 10vh;
+}
+.redes{
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+/*----------------------------------------home-------------------------------------------------------------*/
+/*----------------------------------------------------*/
+/*
+@supports(object-fit: cover){
+    .btnNvl1 img{
+      height: 70%;
+      width:70%;
+      object-fit: cover;
+      object-position: center;
+    }
+} 
+.registroHome figure{
+    margin:0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+.registroHome{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 3rem;
+}
+*/
+/*-------------------carousel----------------------------------*/
+#atras,#siguiente{
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    background: none;
+    border-radius: 45%;
+    border: solid white;
+    /*opacity: 0.5;*/
+}
+.carousel{
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.btnCarousel{
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.imgCarousel{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+/*------------------------------------------twitter--------------------------------------------*/
+aside h2{
+    font-size: 2rem;
+    text-align: center;
+}
+.box{
+    height: 90%;
+    display: block;
+    overflow-y: scroll;
+}
+
+.box::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.box::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.box::-webkit-scrollbar-button:increment,.box::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.box::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.box::-webkit-scrollbar-thumb {
+    background-color: #060541;
+    border-radius: 20px;
+    border: 2px solid #F2B950;
+}
+
+.box::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+/*----------------------------------------media query------------------------------------------*/
+/*---------------------------------------------------------------------------------------------*/
+/*----------------------------------------------PC---------------------------------------------*/ 
+@media only screen and (min-width: 650px) {
+    /*--------gral--------------*/
+    .Container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+        font-size: 24px;
+    }
+    nav{
+        height: 5%;
+    }
+    .barraNav{
+        visibility: hidden;
+    }
+    .aMostrar:hover .barraNav{
+        visibility: visible;
+    }
+    .navMovil{
+        display: none;
+    }
+    footer{
+        display: flex;
+        flex-direction: row;
+    }
+    /*----------home------------*/
+    .homeContainer {
+        display: grid;
+        grid-template-columns: repeat(8,1fr);
+        grid-template-rows: 100vh 40vh 30vh 20vh;
+        grid-template-areas: 
+        "header header header header header header header header" 
+        "article1 article1 article1 article1 article1 article1 aside aside" 
+        "graduados graduados graduados ranking ranking ranking aside aside" 
+        "video video plan plan galeria galeria aside aside";
+    }
+    
+    header { grid-area: header; }
+    .registroHome { grid-area: article1; }
+    aside { grid-area: aside; }
+    .video { grid-area: video; }
+    .plan { grid-area: plan; }
+    .alumnos { grid-area: graduados; }
+    .galeria { grid-area: galeria; }
+    .ranking { grid-area: ranking; }
+
+    .registroHome{
+        background: rgb(1, 6, 255);
+    }
+    aside{
+        background: #D99543;
+        margin: 5px;
+        /* border-radius:20px; */
+    }
+    .video{
+        background: rgb(204, 0, 204);
+    }
+    .plan{
+        background: rgb(0, 200, 43);
+    }
+    .alumnos{
+        background: rgb(194, 0, 0);
+    }
+    .galeria{
+        background: rgb(0, 175, 206);
+    }
+    .ranking{
+        background: rgb(189, 7, 98);
+    }
+    .btnNvl1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: #95B8BF;
+        border-radius: 30px; */
+        margin: 5px;
+        font-size: 2rem;
+    }
+    .btnNvl2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       /*  background-color: #95B8BF;
+        border-radius: 30px; */
+        margin: 7px;
+    }
+    /*--------alumno-----------------------*/
+    @supports(object-fit: cover){
+        .datosAlumno .imagenes img{
+            height: 100%;
+            width:100%;
+            object-fit: cover;
+            object-position: left;
+        }
+    } 
+    .datosAlumno{
+        display: grid;
+        margin-top: 3%;
+        height: 35vh;
+        grid-template-columns: 70% 30%;
+    }
+    .datosAlumno .imagenes{
+        overflow: auto;
+        margin-right: 4%;
+    }
+    #template_vue_comentarios{
+        overflow: auto;
+        height: 30vh;
+    }
+    .alumno{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .datosAlumno .imagenes::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+    #template_vue_comentarios::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+    
+    .datosAlumno .imagenes:-webkit-scrollbar-thumb {
+        background-color: #060541;
+        border-radius: 20px;
+        border: 2px solid #F2B950;
+    }
+    #template_vue_comentarios::-webkit-scrollbar-thumb {
+        background-color: #060541;
+        border-radius: 20px;
+        border: 2px solid #F2B950;
+    }
+    
+    .datosAlumno .imagenes::-webkit-scrollbar-track {
+        border-radius: 10px;  
+    }
+    #template_vue_comentarios::-webkit-scrollbar-track {
+        border-radius: 10px;  
+    }
+
+
+}
+/*--------------------------------------------MOVIL--------------------------------------------*/
